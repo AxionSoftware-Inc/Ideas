@@ -4,7 +4,7 @@ This repository is a persistent design notebook for high-value scientific softwa
 
 The central thesis is that scientific expressions should not remain inert strings rendered by LaTeX/MathJax. A formula should become a semantic object that carries enough structure to be checked, transformed, searched, simulated, compiled, versioned, audited, optimized and formally verified.
 
-The larger product thesis is **Scientific Software Infrastructure**: own the semantic/evidence layer connecting equations, models, data, simulations, experiments and engineering decisions rather than rebuilding every solver from scratch.
+The larger product thesis is **Scientific Software Infrastructure**: own the semantic/evidence layer connecting equations, models, data, simulations, experiments, materials and engineering decisions rather than rebuilding every solver from scratch.
 
 ## Foundation / core
 
@@ -60,11 +60,38 @@ The larger product thesis is **Scientific Software Infrastructure**: own the sem
 47. [Physics-Aware Failure Mode Explorer](47-physics-aware-failure-mode-explorer.md)
 48. [Verified Scientific Model Marketplace](48-verified-model-marketplace.md)
 
+## Scientific knowledge infrastructure
+
+49. [Scientific Knowledge Fabric](49-scientific-knowledge-fabric.md)
+50. [Materials Property Intelligence Layer](50-materials-property-intelligence-layer.md)
+51. [Property Conflict Resolver / Scientific Consensus Engine](51-property-conflict-resolver.md)
+52. [Material-to-Design Compiler](52-material-to-design-compiler.md)
+53. [Material Substitution Engine](53-material-substitution-engine.md)
+54. [Scientific Entity Resolver](54-scientific-entity-resolver.md)
+55. [Theory Dependency Graph](55-theory-dependency-graph.md)
+56. [Evidence-Weighted Equation Registry](56-evidence-weighted-equation-registry.md)
+
+## Scientific agent & laboratory infrastructure
+
+57. [Scientific Agent Capability Protocol](57-scientific-agent-capability-protocol.md)
+58. [Instrument Capability Registry / Lab Device ABI](58-instrument-capability-registry.md)
+59. [Protocol-to-Hardware Transpiler](59-protocol-to-hardware-transpiler.md)
+60. [Experiment Preflight Simulator / Safety Sandbox](60-experiment-preflight-simulator.md)
+
+## Materials-to-industry infrastructure
+
+61. [Process-Structure-Property Causal Graph](61-process-structure-property-graph.md)
+62. [Material Process Recipe Compiler](62-material-process-recipe-compiler.md)
+63. [Material Qualification Planner](63-material-qualification-planner.md)
+64. [Standards-to-Tests Compiler](64-standards-to-tests-compiler.md)
+65. [Scientific Knowledge Gap Mapper](65-scientific-knowledge-gap-mapper.md)
+66. [R&D Portfolio Optimizer](66-rd-portfolio-optimizer.md)
+67. [Hypothesis Falsification Planner](67-hypothesis-falsification-planner.md)
+68. [Scientific Data Valuation Engine](68-scientific-data-valuation-engine.md)
+
 ## Product strategy
 
 ### Tier A — fastest painkillers / easiest wedges
-These can be useful before the whole platform exists.
-
 - Scientific Model Testbench
 - Equation Debugger
 - Tensor / Index Debugger
@@ -74,10 +101,10 @@ These can be useful before the whole platform exists.
 - Model Certification Passport
 - Scientific Convention Translator
 - Numerical Solver Planner
+- Property Conflict Resolver
+- Material Substitution Engine
 
 ### Tier B — highest-value enterprise products
-These can save real engineering/laboratory/compute money.
-
 - Literature → Executable Model
 - Inverse Problem Studio
 - Optimal Experiment Design
@@ -89,25 +116,30 @@ These can save real engineering/laboratory/compute money.
 - Multiphysics Coupling Compiler
 - Safety Envelope Compiler
 - Sensor-to-State / Virtual Sensors
-- Scientific Compute Planner
-- Physics-Aware Failure Mode Explorer
+- Material-to-Design Compiler
+- Material Qualification Planner
+- Standards-to-Tests Compiler
+- R&D Portfolio Optimizer
+- Scientific Data Valuation Engine
 
 ### Tier C — strongest platform moat
-These should become shared infrastructure used by many products.
-
 - Semantic Scientific Objects / IR
 - Scientific Provenance Graph
+- Scientific Knowledge Fabric
+- Scientific Entity Resolver
+- Theory Dependency Graph
+- Evidence-Weighted Equation Registry
 - Verified Model Registry
 - Scientific Model ABI
 - Scientific Data Contracts
 - Assumption Graph
 - Domain-of-Validity Mapper
 - Scientific Lockfile
-- Scientific Change-Impact Analyzer
-- Model Passport
+- Scientific Agent Capability Protocol
+- Instrument Capability Registry
+- Process-Structure-Property Graph
 
 ### Tier D — deepest R&D / biggest upside
-
 - Governing Equation Discovery
 - Regime & Asymptotic Compiler
 - Missing Physics Diagnoser
@@ -115,62 +147,56 @@ These should become shared infrastructure used by many products.
 - Optimal Experiment Design
 - Autonomous Lab Protocol Compiler
 - Physical Plausibility Firewall
+- Scientific Knowledge Gap Mapper
+- Hypothesis Falsification Planner
 
-## Two important flywheels
+## Four strategic flywheels
 
 ### Engineering model flywheel
-
 ```text
-Semantic IR
-  -> Model Testbench
-  -> Scientific CI
-  -> Model Passport
-  -> Verified Model Registry
-  -> Model ABI / deployment
-  -> operational data
-  -> calibration / drift diagnosis
-  -> improved model
+Semantic IR -> Model Testbench -> Scientific CI -> Model Passport -> Registry -> deployment -> operational data -> calibration -> improved model
 ```
 
 ### Scientific discovery flywheel
-
 ```text
-Literature
-  -> executable models / benchmarks
-  -> simulation
-  -> uncertainty / missing-physics analysis
-  -> optimal experiment design
-  -> lab protocol
-  -> new data
-  -> inverse problems / equation discovery
-  -> verified new model
-  -> registry + provenance
+Literature -> executable models -> simulation -> uncertainty -> optimal experiment -> new data -> inverse problems/equation discovery -> verified model
+```
+
+### Materials flywheel
+```text
+Property evidence -> conflict resolution -> process/structure/property graph -> material selection -> process recipe -> qualification -> field data -> improved property evidence
+```
+
+### Autonomous laboratory flywheel
+```text
+Scientific agent -> typed capability discovery -> abstract protocol -> hardware transpilation -> preflight -> execution -> provenance -> data -> next experiment
 ```
 
 ## Business architecture
 
-The strongest business is probably not 48 disconnected apps. Build a common scientific core and expose several products on top of it.
-
-A plausible stack:
+The strongest business is not dozens of disconnected apps. Build a common scientific core and expose several products on top of it.
 
 ```text
 Applications
-Debugger | Testbench | Inverse Design | Digital Twin | Lab | Audit
-                         ↓
+Debugger | Testbench | Materials | Inverse Design | Digital Twin | Lab | Audit
+                              ↓
 Scientific Services
-UQ | Optimization | Solver Planning | Verification | Search | Provenance
-                         ↓
+UQ | Optimization | Solver Planning | Verification | Search | Provenance | Evidence
+                              ↓
 Shared Core
-Semantic IR | Units | Types | Assumptions | Validity | Evidence Graph
-                         ↓
+Semantic IR | Units | Types | Assumptions | Validity | Entity Resolution | Knowledge Fabric
+                              ↓
+Registries / Protocols
+Models | Equations | Properties | Instruments | Agent Capabilities
+                              ↓
 Adapters
-SymPy/Sage | SciML | FEM/CFD | FMI/Modelica | Lean | Python/Julia/C++
+SymPy/Sage | SciML | FEM/CFD | FMI/Modelica | Lean | OPTIMADE | Lab HW | Python/Julia/C++
 ```
 
-Long term, the Verified Model Registry + Model Passport + Scientific Lockfile can support a Verified Model Marketplace and private enterprise model catalogs.
+Long term, the registries plus provenance/evidence graph can support marketplaces for verified models, data, material property sets and scientific services.
 
 ## Principle
 
-Existing tools such as LaTeX, MathJax/KaTeX, SymPy/SageMath, Jupyter, SciML/FEniCS/QuTiP, Lean/Mathlib, FMI/Modelica and visualization libraries already solve many isolated layers well. Avoid rebuilding commodity components unless necessary.
+Existing tools already solve many isolated layers well. Avoid rebuilding commodity components unless necessary.
 
-Own the **semantic layer, scientific type system, diagnostics, evidence/provenance, validation, orchestration, interoperability and domain-specific workflow intelligence**.
+Own the **semantic layer, scientific type system, entity resolution, diagnostics, evidence/provenance, validation, orchestration, interoperability and domain-specific workflow intelligence**.
