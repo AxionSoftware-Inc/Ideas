@@ -4,7 +4,7 @@ This repository is a persistent design notebook for high-value scientific softwa
 
 The central thesis is that scientific expressions should not remain inert strings rendered by LaTeX/MathJax. A formula should become a semantic object that carries enough structure to be checked, transformed, searched, simulated, compiled, versioned, audited, optimized and formally verified.
 
-The larger product thesis is **Scientific Software Infrastructure**: own the semantic/evidence layer connecting equations, models, data, simulations, experiments, materials and engineering decisions rather than rebuilding every solver from scratch.
+The larger product thesis is **Scientific Software Infrastructure**: own the semantic/evidence layer connecting equations, models, theorems, proofs, data, simulations, experiments, materials and engineering decisions rather than rebuilding every solver from scratch.
 
 ## Foundation / core
 
@@ -89,6 +89,40 @@ The larger product thesis is **Scientific Software Infrastructure**: own the sem
 67. [Hypothesis Falsification Planner](67-hypothesis-falsification-planner.md)
 68. [Scientific Data Valuation Engine](68-scientific-data-valuation-engine.md)
 
+## Mathematical knowledge & formal-math infrastructure
+
+69. [Mathematical Object Registry](69-mathematical-object-registry.md)
+70. [Theorem Equivalence & Duplicate Detector](70-theorem-equivalence-and-duplicate-detector.md)
+71. [Formalization Faithfulness Auditor](71-formalization-faithfulness-auditor.md)
+72. [Proof Repair & Library Migration Engine](72-proof-repair-and-library-migration-engine.md)
+73. [Counterexample Compiler](73-counterexample-compiler.md)
+74. [Assumption Minimizer](74-assumption-minimizer.md)
+75. [Generalization / Specialization Explorer](75-generalization-specialization-explorer.md)
+76. [Lemma Gap Miner](76-lemma-gap-miner.md)
+77. [Conjecture Value Engine](77-conjecture-value-engine.md)
+78. [Proof Strategy Atlas](78-proof-strategy-atlas.md)
+79. [Mathematical Notation Ontology & Translator](79-mathematical-notation-ontology.md)
+80. [Definition Alignment Engine](80-definition-alignment-engine.md)
+81. [Theorem Semantic Versioning](81-theorem-semantic-versioning.md)
+82. [Incremental Proof Build System](82-incremental-proof-build-system.md)
+
+## Mathematical / physical discovery infrastructure
+
+83. [Operator Algebra Discovery Engine](83-operator-algebra-discovery-engine.md)
+84. [Approximation Discovery Engine](84-approximation-discovery-engine.md)
+85. [Invariant & Symmetry Discovery Engine](85-invariant-and-symmetry-discovery-engine.md)
+86. [Coordinate & Representation Compiler](86-coordinate-and-representation-compiler.md)
+87. [Perturbation Expansion Synthesizer](87-perturbation-expansion-synthesizer.md)
+88. [Model Family Generator & Falsifier](88-model-family-generator-and-falsifier.md)
+89. [Theorem-to-Algorithm Compiler](89-theorem-to-algorithm-compiler.md)
+90. [Proof Cost Profiler](90-proof-cost-profiler.md)
+91. [Mathematical Capability API](91-mathematical-capability-api.md)
+92. [Theorem Query Planner](92-theorem-query-planner.md)
+93. [Formal Library Coverage Map](93-formal-library-coverage-map.md)
+94. [Proof Provenance Certificate](94-proof-provenance-certificate.md)
+95. [Mathematical Frontier Mapper](95-mathematical-frontier-mapper.md)
+96. [Abstraction & Definition Designer](96-abstraction-and-definition-designer.md)
+
 ## Product strategy
 
 ### Tier A — fastest painkillers / easiest wedges
@@ -103,6 +137,11 @@ The larger product thesis is **Scientific Software Infrastructure**: own the sem
 - Numerical Solver Planner
 - Property Conflict Resolver
 - Material Substitution Engine
+- Mathematical Notation Translator
+- Theorem Equivalence Detector
+- Formalization Faithfulness Auditor
+- Proof Repair Engine
+- Proof Cost Profiler
 
 ### Tier B — highest-value enterprise products
 - Literature → Executable Model
@@ -121,12 +160,16 @@ The larger product thesis is **Scientific Software Infrastructure**: own the sem
 - Standards-to-Tests Compiler
 - R&D Portfolio Optimizer
 - Scientific Data Valuation Engine
+- Proof Repair & Library Migration
+- Formal Library Coverage Map
+- Proof Provenance Certificates
 
 ### Tier C — strongest platform moat
 - Semantic Scientific Objects / IR
 - Scientific Provenance Graph
 - Scientific Knowledge Fabric
 - Scientific Entity Resolver
+- Mathematical Object Registry
 - Theory Dependency Graph
 - Evidence-Weighted Equation Registry
 - Verified Model Registry
@@ -136,21 +179,33 @@ The larger product thesis is **Scientific Software Infrastructure**: own the sem
 - Domain-of-Validity Mapper
 - Scientific Lockfile
 - Scientific Agent Capability Protocol
+- Mathematical Capability API
+- Definition Alignment Engine
+- Theorem Semantic Versioning
 - Instrument Capability Registry
 - Process-Structure-Property Graph
+- Proof Strategy Atlas
 
 ### Tier D — deepest R&D / biggest upside
 - Governing Equation Discovery
 - Regime & Asymptotic Compiler
 - Missing Physics Diagnoser
 - LaTeX → Lean / formal verification
+- Counterexample Compiler
+- Assumption Minimizer
+- Generalization / Specialization Explorer
+- Conjecture Value Engine
+- Operator Algebra Discovery
+- Approximation Discovery
+- Invariant & Symmetry Discovery
+- Abstraction & Definition Designer
 - Optimal Experiment Design
 - Autonomous Lab Protocol Compiler
 - Physical Plausibility Firewall
 - Scientific Knowledge Gap Mapper
 - Hypothesis Falsification Planner
 
-## Four strategic flywheels
+## Six strategic flywheels
 
 ### Engineering model flywheel
 ```text
@@ -172,31 +227,41 @@ Property evidence -> conflict resolution -> process/structure/property graph -> 
 Scientific agent -> typed capability discovery -> abstract protocol -> hardware transpilation -> preflight -> execution -> provenance -> data -> next experiment
 ```
 
+### Formal mathematics flywheel
+```text
+Informal math -> faithful formalization -> theorem graph -> equivalence/retrieval -> proof/disproof -> assumption minimization -> reusable library -> cheaper future proofs
+```
+
+### Mathematical discovery flywheel
+```text
+Known structures -> abstraction/operator search -> candidate theorem/model -> counterexample pressure -> proof/validation -> impact/value scoring -> new reusable structures
+```
+
 ## Business architecture
 
 The strongest business is not dozens of disconnected apps. Build a common scientific core and expose several products on top of it.
 
 ```text
 Applications
-Debugger | Testbench | Materials | Inverse Design | Digital Twin | Lab | Audit
-                              ↓
-Scientific Services
-UQ | Optimization | Solver Planning | Verification | Search | Provenance | Evidence
-                              ↓
+Debugger | Testbench | Math IDE | Materials | Inverse Design | Digital Twin | Lab | Audit
+                                      ↓
+Scientific / Mathematical Services
+UQ | Optimization | Solver Planning | Proof | Disproof | Search | Provenance | Evidence | Discovery
+                                      ↓
 Shared Core
-Semantic IR | Units | Types | Assumptions | Validity | Entity Resolution | Knowledge Fabric
-                              ↓
+Semantic IR | Units | Types | Assumptions | Validity | Entities | Operators | Theorem Graph | Knowledge Fabric
+                                      ↓
 Registries / Protocols
-Models | Equations | Properties | Instruments | Agent Capabilities
-                              ↓
+Models | Equations | Mathematical Objects | Theorems | Properties | Instruments | Agent Capabilities
+                                      ↓
 Adapters
-SymPy/Sage | SciML | FEM/CFD | FMI/Modelica | Lean | OPTIMADE | Lab HW | Python/Julia/C++
+Lean | SymPy/Sage | SciML | FEM/CFD | FMI/Modelica | SMT/SAT | OPTIMADE | Lab HW | Python/Julia/C++
 ```
 
-Long term, the registries plus provenance/evidence graph can support marketplaces for verified models, data, material property sets and scientific services.
+Long term, the registries plus provenance/evidence graphs can support marketplaces for verified models, proofs, data, material property sets and scientific services.
 
 ## Principle
 
 Existing tools already solve many isolated layers well. Avoid rebuilding commodity components unless necessary.
 
-Own the **semantic layer, scientific type system, entity resolution, diagnostics, evidence/provenance, validation, orchestration, interoperability and domain-specific workflow intelligence**.
+Own the **semantic layer, scientific type system, mathematical object identity, entity/definition alignment, diagnostics, evidence/provenance, validation, orchestration, interoperability, proof/disproof infrastructure and domain-specific workflow intelligence**.
